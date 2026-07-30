@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
+import { ConvergenceFlow } from "@/components/ConvergenceFlow";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
