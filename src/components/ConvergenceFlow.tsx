@@ -45,7 +45,7 @@ const tools: Tool[] = [
 // Curved paths from each card (top) converging into FICO (bottom center).
 const starts = [100, 300, 500, 700, 900];
 const paths = starts.map(
-  (x) => `M ${x} 0 C ${x} 70, 500 60, 500 150`,
+  (x) => `M ${x} 0 C ${x} 70, 500 55, 500 118`,
 );
 
 export function ConvergenceFlow() {
@@ -137,7 +137,7 @@ export function ConvergenceFlow() {
         </svg>
 
         {/* Mensaje de transición */}
-        <p className="-mt-2 text-center text-xs tracking-wide text-muted-foreground sm:text-sm">
+        <p className="-mt-3 text-center text-xs tracking-wide text-muted-foreground sm:text-sm">
           Centraliza la información que ya utilizas.
         </p>
       </div>
