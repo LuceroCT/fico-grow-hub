@@ -223,7 +223,13 @@
 }
 
 @utility text-gradient {
-  background-image: var(--gradient-brand);
+  background-image: var(--gradient-cta);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-light {
+  background-image: linear-gradient(120deg, var(--primary-glow), oklch(0.87 0.0622 274));
   background-clip: text;
   color: transparent;
 }

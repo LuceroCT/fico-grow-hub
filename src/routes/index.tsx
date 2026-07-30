@@ -177,7 +177,7 @@ function Landing() {
 
 
       {/* Problema */}
-      <section className="border-y border-border bg-muted/40">
+      <section className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -257,7 +257,7 @@ function Landing() {
       </section>
 
       {/* Recorrido */}
-      <section id="recorrido" className="border-y border-border bg-muted/40">
+      <section id="recorrido" className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
           <div className="max-w-xl">
             <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
