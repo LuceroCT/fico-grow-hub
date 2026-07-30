@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
+import { ConvergenceFlow } from "@/components/ConvergenceFlow";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -179,7 +180,7 @@ function Landing() {
       {/* Problema */}
       <section className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
             <div>
               <p className="font-display text-6xl font-semibold text-gradient sm:text-7xl">70%</p>
               <p className="mt-3 max-w-md text-lg text-foreground">
@@ -190,38 +191,17 @@ function Landing() {
                 [Marcador: reemplazar por una cifra verificada con fuente oficial, p. ej. INEI,
                 Produce o BCRP.]
               </p>
-              <p className="mt-8 max-w-md leading-relaxed text-muted-foreground">
-                No es por falta de esfuerzo. Es porque la información del negocio vive dispersa en
-                demasiados lugares y nunca cuadra a tiempo.
-              </p>
             </div>
-
-            <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8">
-              <div className="flex flex-wrap gap-2">
-                {scattered.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-dashed border-border bg-background px-3 py-1.5 text-sm text-muted-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-              <div className="my-6 flex items-center justify-center">
-                <div className="h-10 w-px bg-[image:var(--gradient-brand)]" />
-              </div>
-              <div className="rounded-2xl bg-[image:var(--gradient-brand)] p-[1px]">
-                <div className="rounded-2xl bg-card px-5 py-6 text-center">
-                  <p className="font-display text-lg font-semibold">Todo en FICO</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Una sola vista para ver cómo está tu negocio hoy.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p className="max-w-md leading-relaxed text-muted-foreground">
+              Hoy el día a día de un negocio se administra con varias herramientas a la vez. FICO
+              reúne esa información en una sola experiencia, más simple y ordenada.
+            </p>
           </div>
+
+          <ConvergenceFlow />
         </div>
       </section>
+
 
       {/* Beneficios */}
       <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
