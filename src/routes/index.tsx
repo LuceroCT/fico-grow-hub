@@ -114,19 +114,21 @@ function Landing() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[image:var(--gradient-soft)]" />
+      <section
+        id="top"
+        className="relative overflow-hidden bg-[image:var(--gradient-brand)] text-primary-foreground"
+      >
         <div className="pointer-events-none absolute inset-0 bg-[image:var(--gradient-halo)]" />
         <div className="relative mx-auto grid max-w-6xl gap-14 px-5 pt-16 pb-20 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pt-24 lg:pb-28">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-[var(--shadow-soft)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-magenta" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
               Hecho para negocios peruanos que ya facturan
             </span>
             <h1 className="mt-6 text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
-              El aliado financiero <span className="text-gradient">de tu negocio</span>
+              El aliado financiero <span className="text-gradient-light">de tu negocio</span>
             </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-primary-foreground/80">
               Factura, entiende tus números y decide con calma. Todo tu negocio en un solo lugar.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -134,7 +136,12 @@ function Landing() {
                 Crear mi cuenta
                 <ArrowRight />
               </Button>
-              <Button variant="soft" size="xl" asChild>
+              <Button
+                variant="outlineBrand"
+                size="xl"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                asChild
+              >
                 <a href="#recorrido">
                   <PlayCircle />
                   Ver recorrido
@@ -143,8 +150,11 @@ function Landing() {
             </div>
             <ul className="mt-10 grid gap-3 sm:grid-cols-3">
               {quickBenefits.map((b) => (
-                <li key={b} className="flex min-w-0 items-start gap-2 text-sm text-muted-foreground">
-                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                <li
+                  key={b}
+                  className="flex min-w-0 items-start gap-2 text-sm text-primary-foreground/80"
+                >
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary-glow" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -152,7 +162,7 @@ function Landing() {
           </div>
 
           <div className="animate-float">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-lift)]">
+            <div className="overflow-hidden rounded-3xl border border-primary-foreground/15 bg-card shadow-[var(--shadow-lift)]">
               <img
                 src={dashboardMockup}
                 alt="Panel de FICO mostrando ventas, cobros y comprobantes del negocio"
@@ -165,8 +175,9 @@ function Landing() {
         </div>
       </section>
 
+
       {/* Problema */}
-      <section className="border-y border-border bg-muted/40">
+      <section className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -246,7 +257,7 @@ function Landing() {
       </section>
 
       {/* Recorrido */}
-      <section id="recorrido" className="border-y border-border bg-muted/40">
+      <section id="recorrido" className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
           <div className="max-w-xl">
             <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
