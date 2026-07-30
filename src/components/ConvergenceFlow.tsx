@@ -157,7 +157,7 @@ export function ConvergenceFlow() {
               <span className="h-2 w-2 rounded-full bg-border" />
               <span className="h-2 w-2 rounded-full bg-border" />
             </div>
-            <div className="mt-4 flex items-end justify-center gap-2">
+            <div className="mt-4 flex h-24 items-end justify-center gap-2">
               {[38, 58, 30, 72, 48, 84].map((h, i) => (
                 <span
                   key={i}
