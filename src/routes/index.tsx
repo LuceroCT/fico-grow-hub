@@ -16,6 +16,7 @@ import {
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
 import { SourceFlow } from "@/components/SourceFlow";
 import { LogoMarquee } from "@/components/LogoMarquee";
+import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -274,6 +275,9 @@ function Landing() {
           </div>
         </div>
       </section>
+
+      {/* Testimonios */}
+      <Testimonials />
 
       {/* Recorrido */}
       <section id="recorrido" className="border-y border-border bg-card">
