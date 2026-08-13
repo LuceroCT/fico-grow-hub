@@ -179,6 +179,8 @@ function Landing() {
         </div>
       </section>
 
+      {/* Logos de clientes */}
+      <LogoMarquee />
 
       {/* Problema */}
       <section className="border-y border-border bg-card">
