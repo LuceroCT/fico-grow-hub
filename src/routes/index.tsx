@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
-import { ConvergenceFlow } from "@/components/ConvergenceFlow";
+import { SourceFlow } from "@/components/SourceFlow";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
 import {
@@ -52,7 +52,7 @@ const quickBenefits = [
   "Liquidez cuando la necesitas",
 ];
 
-const scattered = ["SUNAT", "SIRE", "Excel", "Estados de cuenta", "Notas en papel"];
+
 
 const benefits = [
   {
@@ -196,42 +196,17 @@ function Landing() {
       {/* Logos de clientes */}
       <LogoMarquee />
 
-      {/* Problema */}
-      <section className="border-y border-border bg-card">
-        <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
-            <div>
-              <p className="font-display text-6xl font-semibold text-gradient sm:text-7xl">70%</p>
-              <p className="mt-3 max-w-md text-lg text-foreground">
-                de las MYPE peruanas enfrenta dificultades para gestionar su liquidez y ordenar su
-                información financiera.
-              </p>
-              <p className="mt-2 text-xs text-muted-foreground">
-                [Marcador: reemplazar por una cifra verificada con fuente oficial, p. ej. INEI,
-                Produce o BCRP.]
-              </p>
-            </div>
-            <p className="max-w-md leading-relaxed text-muted-foreground">
-              Hoy el día a día de un negocio se administra con varias herramientas a la vez. FICO
-              reúne esa información en una sola experiencia, más simple y ordenada.
-            </p>
-          </div>
-
-          <ConvergenceFlow />
-        </div>
-      </section>
-
-
       {/* Beneficios */}
       <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
         <div className="max-w-xl">
           <h2 className="text-3xl font-semibold sm:text-4xl">
             Menos tiempo administrando. Más tiempo creciendo.
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            FICO te acompaña en lo que realmente importa: que tu negocio avance con claridad.
-          </p>
+          <p className="mt-4 text-muted-foreground">FICO centraliza todo lo que ya usas</p>
         </div>
+
+        <SourceFlow />
+
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map(({ icon: Icon, title, text, soon }) => (
             <article
