@@ -167,6 +167,9 @@ function Landing() {
                 </a>
               </Button>
             </div>
+            <p className="mt-5 text-center text-sm text-primary-foreground/70 sm:text-left">
+              ✓ Gratis para siempre · Sin tarjeta de crédito · Sin letra pequeña
+            </p>
             <ul className="mt-10 grid gap-3 sm:grid-cols-3">
               {quickBenefits.map((b) => (
                 <li
