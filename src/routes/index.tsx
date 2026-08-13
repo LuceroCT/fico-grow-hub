@@ -14,6 +14,7 @@ import {
 
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
 import { ConvergenceFlow } from "@/components/ConvergenceFlow";
+import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
