@@ -52,7 +52,7 @@ const quickBenefits = [
   "Liquidez cuando la necesitas",
 ];
 
-const scattered = ["SUNAT", "SIRE", "Excel", "Estados de cuenta", "Notas en papel"];
+
 
 const benefits = [
   {
