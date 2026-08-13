@@ -238,6 +238,51 @@ function Landing() {
         </div>
       </section>
 
+      {/* Liquidez */}
+      <section className="relative overflow-hidden bg-[image:var(--gradient-brand)] text-primary-foreground">
+        <div className="pointer-events-none absolute inset-0 bg-[image:var(--gradient-halo)]" />
+        <div className="relative mx-auto max-w-4xl px-5 py-20 text-center lg:py-28">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
+            Liquidez para tu negocio
+          </span>
+          <h2 className="mx-auto mt-6 max-w-2xl text-3xl leading-tight font-semibold sm:text-4xl lg:text-5xl">
+            Tienes facturas emitidas.
+            <br />
+            No esperes 60 días para cobrarlas.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-primary-foreground/80">
+            La falta de liquidez es la principal razón por la que las empresas peruanas dejan de
+            crecer. Con FICO puedes adelantar el cobro de tus facturas hoy. Sin trámites bancarios.
+            Sin complicaciones. Nosotros nos encargamos de encontrar la mejor opción para ti.
+          </p>
+
+          <div className="mt-12">
+            <p className="font-display text-5xl font-semibold text-gradient-light sm:text-6xl">
+              7 de cada 10
+            </p>
+            <p className="mx-auto mt-3 max-w-md text-primary-foreground/85">
+              MYPE peruanas enfrenta problemas de liquidez en algún momento del año
+            </p>
+            <p className="mx-auto mt-2 max-w-md text-[11px] text-primary-foreground/50">
+              [Fuente: reemplazar con dato verificado - INEI / Produce / BCRP]
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <Button variant="soft" size="xl" asChild>
+              <a href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                Quiero adelantar mis facturas
+                <ArrowRight />
+              </a>
+            </Button>
+            <p className="mt-4 text-xs text-primary-foreground/60">
+              Te respondemos en menos de 24 horas
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Recorrido */}
       <section id="recorrido" className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
