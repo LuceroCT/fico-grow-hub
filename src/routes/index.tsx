@@ -310,24 +310,15 @@ function Landing() {
             </p>
           </div>
 
-          <div className="mt-10 grid place-items-center overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] aspect-video">
-            {/* Espacio para el video de demostración */}
+          {/* TODO: reemplazar placeholder con <iframe> del video de recorrido de FICO */}
+          <div className="mx-auto mt-10 grid aspect-video w-full max-w-[900px] place-items-center overflow-hidden rounded-3xl border border-border bg-[#F1F1F5] shadow-[var(--shadow-soft)]">
             <div className="text-center">
               <PlayCircle className="mx-auto size-12 text-primary" />
-              <p className="mt-3 font-display font-medium">Espacio para el video demo</p>
-              <p className="text-sm text-muted-foreground">Reemplazar por el embed del recorrido.</p>
+              <p className="mt-3 font-display font-medium">Video de recorrido próximamente</p>
+              <p className="text-sm text-muted-foreground">
+                Reemplazar con embed de YouTube, Loom o Vimeo
+              </p>
             </div>
-          </div>
-
-          <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            {["Emisión de comprobantes", "Resumen financiero", "Historial del negocio"].map((s) => (
-              <div
-                key={s}
-                className="grid aspect-4/3 place-items-center rounded-2xl border border-dashed border-border bg-card p-4 text-center text-sm text-muted-foreground"
-              >
-                Captura: {s}
-              </div>
-            ))}
           </div>
         </div>
       </section>
