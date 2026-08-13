@@ -65,6 +65,11 @@ const benefits = [
     text: "Entiende cuánto entra, cuánto sale y cuánto te queda, sin fórmulas ni hojas de cálculo.",
   },
   {
+    icon: Zap,
+    title: "Cobra antes de tiempo",
+    text: "Adelanta el cobro de tus facturas emitidas y mantén tu negocio en movimiento. Sin esperas, sin trámites complicados.",
+  },
+  {
     icon: Sparkles,
     title: "Un consejo cuando lo necesitas",
     text: "Pronto tendrás un coach financiero con IA que te acompaña a decidir con más seguridad.",
