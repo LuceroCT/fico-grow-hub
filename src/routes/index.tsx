@@ -92,8 +92,16 @@ const faqs = [
     a: "Sí. Te acompañamos en el proceso para que empieces con tu historial ordenado desde el primer día.",
   },
   {
-    q: "¿Cuándo estará disponible el coach financiero con IA?",
-    a: "Está en camino. Al registrarte hoy, serás de los primeros en usarlo cuando lo liberemos.",
+    q: "¿Cómo puedo adelantar el cobro de mis facturas con FICO?",
+    a: "Desde la plataforma puedes solicitar el adelanto de tus facturas emitidas. Nosotros evaluamos tu caso y te presentamos la mejor opción disponible. El proceso es simple y sin papeleo innecesario.",
+  },
+  {
+    q: "¿FICO es solo para empresas grandes?",
+    a: "No. FICO está diseñado para empresas medianas y pequeñas que venden a otras empresas. Si ya emites facturas electrónicas, FICO está hecho para ti.",
+  },
+  {
+    q: "¿Mis clientes necesitan estar en FICO para que yo pueda usarlo?",
+    a: "No. Tus clientes no necesitan registrarse ni hacer nada. FICO trabaja con tu información, no con la de ellos.",
   },
 ];
 
