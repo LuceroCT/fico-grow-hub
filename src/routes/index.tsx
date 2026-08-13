@@ -10,6 +10,7 @@ import {
   MessageCircle,
   PlayCircle,
   Sparkles,
+  Zap,
 } from "lucide-react";
 
 import dashboardMockup from "@/assets/fico-dashboard.jpg";
@@ -223,7 +224,7 @@ function Landing() {
             FICO te acompaña en lo que realmente importa: que tu negocio avance con claridad.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map(({ icon: Icon, title, text, soon }) => (
             <article
               key={title}
