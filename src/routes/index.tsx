@@ -46,8 +46,8 @@ export const Route = createFileRoute("/")({
 
 const quickBenefits = [
   "Facturas válidas ante SUNAT",
-  "Tus números claros cada día",
-  "Todo tu negocio en un solo lugar",
+  "Cobra a tiempo, siempre",
+  "Liquidez cuando la necesitas",
 ];
 
 const scattered = ["SUNAT", "SIRE", "Excel", "Estados de cuenta", "Notas en papel"];
@@ -124,13 +124,15 @@ function Landing() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
-              Hecho para negocios peruanos que ya facturan
+              Para empresas peruanas que venden a otras empresas
             </span>
             <h1 className="mt-6 text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
-              El aliado financiero <span className="text-gradient-light">de tu negocio</span>
+              Factura, <span className="text-gradient-light">cobra</span> a tiempo y haz crecer tu
+              negocio
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-primary-foreground/80">
-              Factura, entiende tus números y decide con calma. Todo tu negocio en un solo lugar.
+              Emite comprobantes válidos ante SUNAT, entiende tu flujo de caja y accede a liquidez
+              cuando más lo necesitas.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button variant="hero" size="xl">
