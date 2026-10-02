@@ -13,7 +13,6 @@ import {
   Zap,
 } from "lucide-react";
 
-import dashboardMockup from "@/assets/fico-dashboard.jpg";
 import { SourceFlow } from "@/components/SourceFlow";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Testimonials } from "@/components/Testimonials";
@@ -48,10 +47,17 @@ export const Route = createFileRoute("/")({
 });
 
 const quickBenefits = [
-  "Facturas válidas ante SUNAT",
-  "Cobra a tiempo, siempre",
-  "Liquidez cuando la necesitas",
+  "Respuesta en menos de 24 horas",
+  "Montos de hasta S/ 10,000",
+  "Acompañamiento para usarlo bien",
 ];
+
+const solicitudSteps = [
+  { label: "Envías tu solicitud", done: true },
+  { label: "Evaluamos tu negocio", done: false },
+  { label: "Te respondemos en menos de 24 horas", done: false },
+];
+
 
 
 
@@ -118,15 +124,16 @@ function Landing() {
             <span className="truncate font-display text-lg font-semibold tracking-tight">FICO</span>
           </a>
           <div className="flex items-center gap-2">
-            <a href="#recorrido" className="hidden text-sm text-muted-foreground sm:block">
+            <a href="#como-funciona" className="hidden text-sm text-muted-foreground sm:block">
               <Button variant="ghost" size="sm">
-                Ver recorrido
+                Cómo funciona
               </Button>
             </a>
-            <Button variant="hero" size="sm" className="rounded-full px-5">
-              Crear mi cuenta
+            <Button variant="hero" size="sm" className="rounded-full px-5" asChild>
+              <a href="#solicitar">Solicitar capital</a>
             </Button>
           </div>
+
         </div>
       </header>
 
@@ -140,20 +147,21 @@ function Landing() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
-              Para empresas peruanas que venden a otras empresas
+              Para empresas B2B que ya facturan
             </span>
             <h1 className="mt-6 text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
-              Factura, <span className="text-gradient-light">cobra</span> a tiempo y haz crecer tu
-              negocio
+              El <span className="text-gradient-light">aliado financiero</span> de tu negocio
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-primary-foreground/80">
-              Emite comprobantes válidos ante SUNAT, entiende tu flujo de caja y accede a liquidez
-              cuando más lo necesitas.
+              Capital de trabajo de hasta S/ 10,000 para empresas que ya venden y facturan, con
+              recomendaciones para usarlo estratégicamente.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button variant="hero" size="xl">
-                Crear mi cuenta
-                <ArrowRight />
+              <Button variant="hero" size="xl" asChild>
+                <a href="#solicitar">
+                  Solicitar capital
+                  <ArrowRight />
+                </a>
               </Button>
               <Button
                 variant="outlineBrand"
@@ -161,15 +169,14 @@ function Landing() {
                 className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
                 asChild
               >
-                <a href="#recorrido">
-                  <PlayCircle />
-                  Ver recorrido
+                {/* PLACEHOLDER: reemplazar con el número real de WhatsApp */}
+                <a href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle />
+                  Escríbenos por WhatsApp
                 </a>
               </Button>
             </div>
-            <p className="mt-5 text-center text-sm text-primary-foreground/70 sm:text-left">
-              ✓ Gratis para siempre · Sin tarjeta de crédito · Sin letra pequeña
-            </p>
+
             <ul className="mt-10 grid gap-3 sm:grid-cols-3">
               {quickBenefits.map((b) => (
                 <li
@@ -184,16 +191,49 @@ function Landing() {
           </div>
 
           <div className="animate-float">
-            <div className="overflow-hidden rounded-3xl border border-primary-foreground/15 bg-card shadow-[var(--shadow-lift)]">
-              <img
-                src={dashboardMockup}
-                alt="Panel de FICO mostrando ventas, cobros y comprobantes del negocio"
-                width={1200}
-                height={912}
-                className="h-auto w-full"
-              />
+            {/* PLACEHOLDER: ilustración provisional, se puede reemplazar por una imagen final */}
+            <div className="overflow-hidden rounded-3xl border border-primary-foreground/15 bg-card text-card-foreground shadow-[var(--shadow-lift)]">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 px-6 py-4">
+                <p className="font-display text-sm font-semibold">Tu solicitud</p>
+                <span className="rounded-full bg-[image:var(--gradient-brand)] px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  Hasta S/ 10,000
+                </span>
+              </div>
+              <div className="px-6 py-6">
+                <ol className="relative space-y-5">
+                  <span
+                    aria-hidden
+                    className="absolute top-2 bottom-4 left-3 w-px bg-[var(--color-border)]"
+                  />
+                  {solicitudSteps.map((s) => (
+                    <li key={s.label} className="relative flex items-start gap-3">
+                      <span
+                        className={`z-10 grid size-6 shrink-0 place-items-center rounded-full ${
+                          s.done
+                            ? "bg-[image:var(--gradient-brand)] text-primary-foreground"
+                            : "border border-border bg-secondary"
+                        }`}
+                      >
+                        {s.done ? (
+                          <Check className="size-3.5" />
+                        ) : (
+                          <span className="size-1.5 rounded-full bg-muted-foreground/40" />
+                        )}
+                      </span>
+                      <span
+                        className={`pt-0.5 text-sm ${
+                          s.done ? "font-medium" : "text-muted-foreground"
+                        }`}
+                      >
+                        {s.label}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -283,7 +323,7 @@ function Landing() {
       <Testimonials />
 
       {/* Recorrido */}
-      <section id="recorrido" className="border-y border-border bg-card">
+      <section id="como-funciona" className="border-y border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
           <div className="max-w-xl">
             <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
@@ -306,7 +346,8 @@ function Landing() {
       </section>
 
       {/* CTA final */}
-      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+      <section id="solicitar" className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+
         <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-6 py-16 text-center sm:px-12">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold text-primary-foreground sm:text-4xl">
             Tu negocio merece más tiempo para crecer.
