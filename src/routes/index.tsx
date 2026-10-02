@@ -101,28 +101,25 @@ const audience = [
 
 const faqs = [
   {
-    q: "¿Mis facturas son válidas ante SUNAT?",
-    a: "Sí. Cada comprobante que emites con FICO cumple con la normativa vigente y queda registrado correctamente.",
+    q: "¿Quién puede solicitar capital?",
+    a: "Empresas peruanas B2B que ya venden y facturan a otras empresas.",
   },
   {
-    q: "¿Necesito conocimientos de contabilidad?",
-    a: "No. FICO traduce tus números a un lenguaje simple para que puedas decidir con confianza.",
+    q: "¿Cuánto puedo solicitar?",
+    a: "Por ahora ofrecemos montos de hasta S/ 10,000.",
   },
   {
-    q: "¿Puedo migrar mi información actual?",
-    a: "Sí. Te acompañamos en el proceso para que empieces con tu historial ordenado desde el primer día.",
+    q: "¿Cuánto tardan en responder?",
+    a: "Te respondemos en menos de 24 horas por WhatsApp o correo.",
   },
   {
-    q: "¿Cómo puedo adelantar el cobro de mis facturas con FICO?",
-    a: "Desde la plataforma puedes solicitar el adelanto de tus facturas emitidas. Nosotros evaluamos tu caso y te presentamos la mejor opción disponible. El proceso es simple y sin papeleo innecesario.",
+    q: "¿Qué pasa después de enviar el formulario?",
+    // PLACEHOLDER: ajustar cuando se definan condiciones finales
+    a: "Revisamos tu información, te contactamos para conocer mejor tu negocio y, si corresponde, te explicamos las condiciones.",
   },
   {
-    q: "¿FICO es solo para empresas grandes?",
-    a: "No. FICO está diseñado para empresas medianas y pequeñas que venden a otras empresas. Si ya emites facturas electrónicas, FICO está hecho para ti.",
-  },
-  {
-    q: "¿Mis clientes necesitan estar en FICO para que yo pueda usarlo?",
-    a: "No. Tus clientes no necesitan registrarse ni hacer nada. FICO trabaja con tu información, no con la de ellos.",
+    q: "¿Qué significa el acompañamiento?",
+    a: "Además del capital, te damos recomendaciones para usarlo de forma estratégica en tu negocio.",
   },
 ];
 
@@ -336,25 +333,28 @@ function Landing() {
       <Testimonials />
 
       {/* Recorrido */}
-      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-        <div className="max-w-xl">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
-          <p className="mt-4 text-muted-foreground">
-            Un recorrido corto por la plataforma, sin tecnicismos.
-          </p>
-        </div>
-
-        {/* TODO: reemplazar placeholder con <iframe> del video de recorrido de FICO */}
-        <div className="mx-auto mt-10 grid aspect-video w-full max-w-[900px] place-items-center overflow-hidden rounded-3xl border border-border bg-[#F1F1F5] shadow-[var(--shadow-soft)]">
-          <div className="text-center">
-            <PlayCircle className="mx-auto size-12 text-primary" />
-            <p className="mt-3 font-display font-medium">Video de recorrido próximamente</p>
-            <p className="text-sm text-muted-foreground">
-              Reemplazar con embed de YouTube, Loom o Vimeo
+      {/* Oculta temporalmente. Reactivar cuando exista video demo del nuevo enfoque */}
+      {false && (
+        <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
+            <p className="mt-4 text-muted-foreground">
+              Un recorrido corto por la plataforma, sin tecnicismos.
             </p>
           </div>
-        </div>
-      </section>
+
+          {/* TODO: reemplazar placeholder con <iframe> del video de recorrido de FICO */}
+          <div className="mx-auto mt-10 grid aspect-video w-full max-w-[900px] place-items-center overflow-hidden rounded-3xl border border-border bg-[#F1F1F5] shadow-[var(--shadow-soft)]">
+            <div className="text-center">
+              <PlayCircle className="mx-auto size-12 text-primary" />
+              <p className="mt-3 font-display font-medium">Video de recorrido próximamente</p>
+              <p className="text-sm text-muted-foreground">
+                Reemplazar con embed de YouTube, Loom o Vimeo
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Solicitud */}
       <section id="solicitar" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 lg:py-28">
@@ -434,7 +434,7 @@ function Landing() {
 
           <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} FICO. Hecho en Perú para negocios peruanos.</p>
-            <p>Comprobantes electrónicos válidos ante SUNAT.</p>
+            <p>Capital de trabajo para empresas B2B en el Perú.</p>
           </div>
         </div>
       </footer>
