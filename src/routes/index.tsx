@@ -1,19 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
-  BarChart3,
+  Building2,
   Check,
-  FileText,
+  ClipboardList,
+  Clock,
+  Compass,
   Instagram,
+  Lightbulb,
   Linkedin,
   Mail,
   MessageCircle,
   PlayCircle,
-  Sparkles,
-  Zap,
+  Wallet,
 } from "lucide-react";
 
-import { SourceFlow } from "@/components/SourceFlow";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
@@ -27,17 +28,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FICO | Facturación y control financiero para tu negocio" },
+      { title: "FICO | Capital de trabajo para tu negocio" },
       {
         name: "description",
         content:
-          "FICO es el aliado financiero del emprendedor peruano: factura ante SUNAT, entiende tus números y toma mejores decisiones desde un solo lugar.",
+          "FICO es el aliado financiero de tu negocio: capital de trabajo de hasta S/ 10,000 para empresas que ya venden y facturan, con acompañamiento para usarlo estratégicamente.",
       },
       { property: "og:title", content: "FICO | El aliado financiero de tu negocio" },
       {
         property: "og:description",
         content:
-          "Facturación electrónica válida ante SUNAT y un panel claro de tu negocio. Menos tiempo en trámites, más tiempo para crecer.",
+          "Capital de trabajo de hasta S/ 10,000 para empresas B2B que ya facturan. Respondemos en menos de 24 horas.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -58,30 +59,42 @@ const solicitudSteps = [
   { label: "Te respondemos en menos de 24 horas", done: false },
 ];
 
-
-
-
-const benefits = [
+const steps = [
   {
-    icon: FileText,
-    title: "Emite y olvídate",
-    text: "Factura en segundos y con la tranquilidad de estar en regla. Dedica ese tiempo a vender, no a trámites.",
+    n: "01",
+    icon: ClipboardList,
+    title: "Solicita",
+    text: "Completa un formulario corto, toma menos de 2 minutos.",
   },
   {
-    icon: BarChart3,
-    title: "Sabe cómo va tu negocio",
-    text: "Entiende cuánto entra, cuánto sale y cuánto te queda, sin fórmulas ni hojas de cálculo.",
+    n: "02",
+    icon: Clock,
+    title: "Te respondemos",
+    text: "Evaluamos tu negocio y te contactamos en menos de 24 horas.",
   },
   {
-    icon: Zap,
-    title: "Cobra antes de tiempo",
-    text: "Adelanta el cobro de tus facturas emitidas y mantén tu negocio en movimiento. Sin esperas, sin trámites complicados.",
+    n: "03",
+    icon: Lightbulb,
+    title: "Úsalo con estrategia",
+    text: "Si te aprobamos, te acompañamos con recomendaciones para sacarle el máximo provecho al capital.",
+  },
+];
+
+const audience = [
+  {
+    icon: Building2,
+    title: "Empresas B2B",
+    text: "Vendes y facturas a otras empresas en el Perú.",
   },
   {
-    icon: Sparkles,
-    title: "Un consejo cuando lo necesitas",
-    text: "Pronto tendrás un coach financiero con IA que te acompaña a decidir con más seguridad.",
-    soon: true,
+    icon: Wallet,
+    title: "Hasta S/ 10,000",
+    text: "Capital de trabajo para tus necesidades del día a día.",
+  },
+  {
+    icon: Compass,
+    title: "Acompañamiento",
+    text: "Recomendaciones para usar el capital de forma estratégica.",
   },
 ];
 
@@ -240,107 +253,104 @@ function Landing() {
       {/* Logos de clientes */}
       <LogoMarquee />
 
-      {/* Beneficios */}
-      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+      {/* Cómo funciona */}
+      <section id="como-funciona" className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
         <div className="max-w-xl">
-          <h2 className="text-3xl font-semibold sm:text-4xl">
-            Menos tiempo administrando. Más tiempo creciendo.
-          </h2>
-          <p className="mt-4 text-muted-foreground">FICO centraliza todo lo que ya usas</p>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Capital de trabajo en 3 pasos</h2>
+          <p className="mt-4 text-muted-foreground">Un proceso simple, humano y rápido.</p>
         </div>
 
-        <SourceFlow />
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {benefits.map(({ icon: Icon, title, text, soon }) => (
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {steps.map(({ n, icon: Icon, title, text }) => (
             <article
               key={title}
               className="group rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary text-primary">
-                <Icon className="size-5" />
-              </span>
-              <div className="mt-5 flex flex-wrap items-center gap-2">
-                <h3 className="text-xl font-semibold">{title}</h3>
-                {soon && (
-                  <span className="rounded-full bg-accent px-2.5 py-1 text-[11px] font-medium text-accent-foreground">
-                    Próximamente
-                  </span>
-                )}
+              <div className="flex items-center justify-between">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary text-primary">
+                  <Icon className="size-5" />
+                </span>
+                <span className="font-display text-2xl font-semibold text-primary/30">{n}</span>
               </div>
+              <h3 className="mt-5 text-xl font-semibold">{title}</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">{text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Liquidez */}
-      <section className="relative overflow-hidden bg-[image:var(--gradient-brand)] text-primary-foreground">
-        <div className="pointer-events-none absolute inset-0 bg-[image:var(--gradient-halo)]" />
-        <div className="relative mx-auto max-w-4xl px-5 py-20 text-center lg:py-28">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
-            Liquidez para tu negocio
-          </span>
-          <h2 className="mx-auto mt-6 max-w-2xl text-3xl leading-tight font-semibold sm:text-4xl lg:text-5xl">
-            Tienes facturas emitidas.
-            <br />
-            No esperes 60 días para cobrarlas.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-primary-foreground/80">
-            La falta de liquidez es la principal razón por la que las empresas peruanas dejan de
-            crecer. Con FICO puedes adelantar el cobro de tus facturas hoy. Sin trámites bancarios.
-            Sin complicaciones. Nosotros nos encargamos de encontrar la mejor opción para ti.
+      {/* Para quién es */}
+      {/* PLACEHOLDER: ajustar el copy cuando se definan condiciones finales */}
+      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-semibold sm:text-4xl">Hecho para empresas que ya venden</h2>
+          <p className="mt-4 text-muted-foreground">
+            Si tu negocio factura a otras empresas, FICO puede ser tu aliado.
           </p>
+        </div>
 
-          <div className="mt-12">
-            <p className="font-display text-5xl font-semibold text-gradient-light sm:text-6xl">
-              7 de cada 10
-            </p>
-            <p className="mx-auto mt-3 max-w-md text-primary-foreground/85">
-              MYPE peruanas enfrenta problemas de liquidez en algún momento del año
-            </p>
-            <p className="mx-auto mt-2 max-w-md text-[11px] text-primary-foreground/50">
-              [Fuente: reemplazar con dato verificado - INEI / Produce / BCRP]
-            </p>
+        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
+          {audience.map(({ icon: Icon, title, text }, i) => {
+            const isFeatured = i === 1;
+            return (
+              <article
+                key={title}
+                className={
+                  isFeatured
+                    ? "relative overflow-hidden rounded-3xl bg-[image:var(--gradient-brand)] p-7 text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-[400ms] md:-translate-y-2 hover:shadow-[var(--shadow-lift)] lg:p-8"
+                    : "rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
+                }
+              >
+                  <span
+                    className={`grid h-11 w-11 place-items-center rounded-2xl ${
+                      isFeatured ? "bg-primary-foreground/15 text-primary-foreground" : "bg-secondary text-primary"
+                    }`}
+                  >
+                    <Icon className="size-5" />
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                  <p
+                    className={`mt-3 leading-relaxed ${
+                      isFeatured ? "text-primary-foreground/80" : "text-muted-foreground"
+                    }`}
+                  >
+                    {text}
+                  </p>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-10">
-            <Button variant="soft" size="xl" asChild>
-              <a href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener noreferrer">
-                Quiero adelantar mis facturas
+          <div className="mt-12 text-center">
+            <Button variant="hero" size="xl" asChild>
+              <a href="#solicitar">
+                Solicitar capital
                 <ArrowRight />
               </a>
             </Button>
-            <p className="mt-4 text-xs text-primary-foreground/60">
-              Te respondemos en menos de 24 horas
-            </p>
           </div>
-        </div>
       </section>
 
       {/* Testimonios */}
       <Testimonials />
 
       {/* Recorrido */}
-      <section id="como-funciona" className="border-y border-border bg-card">
-        <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-          <div className="max-w-xl">
-            <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
-            <p className="mt-4 text-muted-foreground">
-              Un recorrido corto por la plataforma, sin tecnicismos.
-            </p>
-          </div>
+      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+        <div className="max-w-xl">
+          <h2 className="text-3xl font-semibold sm:text-4xl">Mira cómo se siente usar FICO</h2>
+          <p className="mt-4 text-muted-foreground">
+            Un recorrido corto por la plataforma, sin tecnicismos.
+          </p>
+        </div>
 
-          {/* TODO: reemplazar placeholder con <iframe> del video de recorrido de FICO */}
-          <div className="mx-auto mt-10 grid aspect-video w-full max-w-[900px] place-items-center overflow-hidden rounded-3xl border border-border bg-[#F1F1F5] shadow-[var(--shadow-soft)]">
-            <div className="text-center">
-              <PlayCircle className="mx-auto size-12 text-primary" />
-              <p className="mt-3 font-display font-medium">Video de recorrido próximamente</p>
-              <p className="text-sm text-muted-foreground">
-                Reemplazar con embed de YouTube, Loom o Vimeo
-              </p>
-            </div>
+        {/* TODO: reemplazar placeholder con <iframe> del video de recorrido de FICO */}
+        <div className="mx-auto mt-10 grid aspect-video w-full max-w-[900px] place-items-center overflow-hidden rounded-3xl border border-border bg-[#F1F1F5] shadow-[var(--shadow-soft)]">
+          <div className="text-center">
+            <PlayCircle className="mx-auto size-12 text-primary" />
+            <p className="mt-3 font-display font-medium">Video de recorrido próximamente</p>
+            <p className="text-sm text-muted-foreground">
+              Reemplazar con embed de YouTube, Loom o Vimeo
+            </p>
           </div>
         </div>
       </section>
