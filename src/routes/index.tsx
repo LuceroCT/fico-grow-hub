@@ -281,27 +281,26 @@ function Landing() {
 
       {/* Para quién es */}
       {/* PLACEHOLDER: ajustar el copy cuando se definan condiciones finales */}
-      <section className="border-y border-border bg-card">
-        <div className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-          <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-3xl font-semibold sm:text-4xl">Hecho para empresas que ya venden</h2>
-            <p className="mt-4 text-muted-foreground">
-              Si tu negocio factura a otras empresas, FICO puede ser tu aliado.
-            </p>
-          </div>
+      <section className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-semibold sm:text-4xl">Hecho para empresas que ya venden</h2>
+          <p className="mt-4 text-muted-foreground">
+            Si tu negocio factura a otras empresas, FICO puede ser tu aliado.
+          </p>
+        </div>
 
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
-            {audience.map(({ icon: Icon, title, text }, i) => {
-              const isFeatured = i === 1;
-              return (
-                <article
-                  key={title}
-                  className={
-                    isFeatured
-                      ? "relative overflow-hidden rounded-3xl bg-[image:var(--gradient-brand)] p-7 text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-[400ms] md:-translate-y-2 hover:shadow-[var(--shadow-lift)] lg:p-8"
-                      : "rounded-3xl border border-border bg-background p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
-                  }
-                >
+        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
+          {audience.map(({ icon: Icon, title, text }, i) => {
+            const isFeatured = i === 1;
+            return (
+              <article
+                key={title}
+                className={
+                  isFeatured
+                    ? "relative overflow-hidden rounded-3xl bg-[image:var(--gradient-brand)] p-7 text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-[400ms] md:-translate-y-2 hover:shadow-[var(--shadow-lift)] lg:p-8"
+                    : "rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
+                }
+              >
                   <span
                     className={`grid h-11 w-11 place-items-center rounded-2xl ${
                       isFeatured ? "bg-primary-foreground/15 text-primary-foreground" : "bg-secondary text-primary"
