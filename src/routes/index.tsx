@@ -6,12 +6,14 @@ import {
   ClipboardList,
   Clock,
   Compass,
+  HeartHandshake,
   Instagram,
   Lightbulb,
   Linkedin,
   Mail,
   MessageCircle,
   PlayCircle,
+  Sparkles,
   Wallet,
 } from "lucide-react";
 
@@ -51,13 +53,14 @@ export const Route = createFileRoute("/")({
 const quickBenefits = [
   "Respuesta en menos de 24 horas",
   "Montos de hasta S/ 10,000",
-  "Acompañamiento para usarlo bien",
+  "Asesoría y acompañamiento incluidos",
 ];
 
 const solicitudSteps = [
   { label: "Envías tu solicitud", done: true },
   { label: "Evaluamos tu negocio", done: false },
   { label: "Te respondemos en menos de 24 horas", done: false },
+  { label: "Te acompañamos a usarlo bien", done: false, highlight: true },
 ];
 
 const steps = [
@@ -76,8 +79,26 @@ const steps = [
   {
     n: "03",
     icon: Lightbulb,
-    title: "Úsalo con estrategia",
-    text: "Si te aprobamos, te acompañamos con recomendaciones para sacarle el máximo provecho al capital.",
+    title: "Te acompañamos",
+    text: "Si te aprobamos, no te dejamos solo: te asesoramos para sacarle el máximo provecho al capital.",
+  },
+];
+
+const acompanamiento = [
+  {
+    icon: Sparkles,
+    title: "Recomendaciones personalizadas",
+    text: "Te sugerimos en qué usar el capital según la realidad de tu negocio.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Asesoría financiera",
+    text: "Resolvemos tus dudas para que tomes decisiones con más claridad.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Acompañamiento continuo",
+    text: "Seguimos a tu lado mientras tu negocio crece.",
   },
 ];
 
@@ -164,8 +185,8 @@ function Landing() {
               El <span className="text-gradient-light">aliado financiero</span> de tu negocio
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-primary-foreground/80">
-              Capital de trabajo de hasta S/ 10,000 para empresas que ya venden y facturan, con
-              recomendaciones para usarlo estratégicamente.
+              Capital de trabajo de hasta S/ 10,000, más asesoría y acompañamiento para que lo uses
+              estratégicamente y tu negocio crezca.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button variant="hero" size="xl" asChild>
@@ -222,18 +243,26 @@ function Landing() {
                         className={`z-10 grid size-6 shrink-0 place-items-center rounded-full ${
                           s.done
                             ? "bg-[image:var(--gradient-brand)] text-primary-foreground"
-                            : "border border-border bg-secondary"
+                            : s.highlight
+                              ? "border border-primary-glow/40 bg-secondary text-primary-glow"
+                              : "border border-border bg-secondary"
                         }`}
                       >
                         {s.done ? (
                           <Check className="size-3.5" />
+                        ) : s.highlight ? (
+                          <Sparkles className="size-3.5" />
                         ) : (
                           <span className="size-1.5 rounded-full bg-muted-foreground/40" />
                         )}
                       </span>
                       <span
                         className={`pt-0.5 text-sm ${
-                          s.done ? "font-medium" : "text-muted-foreground"
+                          s.done
+                            ? "font-medium"
+                            : s.highlight
+                              ? "font-medium text-primary-glow"
+                              : "text-muted-foreground"
                         }`}
                       >
                         {s.label}
@@ -259,10 +288,14 @@ function Landing() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {steps.map(({ n, icon: Icon, title, text }) => (
+          {steps.map(({ n, icon: Icon, title, text }, i) => (
             <article
               key={title}
-              className="group rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
+              className={
+                i === 2
+                  ? "group rounded-3xl border-2 border-primary-glow/40 bg-card p-7 shadow-[var(--shadow-lift)] transition-all duration-[400ms] md:-translate-y-2 hover:border-primary-glow/60"
+                  : "group rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-[400ms] hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-lift)]"
+              }
             >
               <div className="flex items-center justify-between">
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary text-primary">
@@ -274,6 +307,46 @@ function Landing() {
               <p className="mt-3 leading-relaxed text-muted-foreground">{text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* Acompañamiento */}
+      {/* PLACEHOLDER: ajustar el detalle de qué incluye el acompañamiento cuando esté definido */}
+      <section id="acompanamiento" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 lg:py-28">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-6 py-16 text-center text-primary-foreground sm:px-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
+            Más que capital
+          </span>
+          <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold sm:text-4xl">
+            No solo te damos capital. Te ayudamos a usarlo bien.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/85">
+            Muchos negocios reciben financiamiento pero no tienen con quién decidir cómo usarlo.
+            Contigo lo hacemos distinto.
+          </p>
+
+          <div className="mt-12 grid gap-6 text-left md:grid-cols-3">
+            {acompanamiento.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-3xl border border-primary-foreground/15 bg-primary-foreground/10 p-7 backdrop-blur"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary text-primary">
+                  <Icon className="size-5" />
+                </span>
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                <p className="mt-3 leading-relaxed text-primary-foreground/80">{text}</p>
+              </article>
+            ))}
+          </div>
+
+          <Button variant="soft" size="xl" className="mt-12" asChild>
+            <a href="#solicitar">
+              Solicitar capital y asesoría
+              <ArrowRight />
+            </a>
+          </Button>
         </div>
       </section>
 
