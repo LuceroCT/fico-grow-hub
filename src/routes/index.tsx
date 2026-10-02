@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { LogoMarquee } from "@/components/LogoMarquee";
+import { SolicitudForm } from "@/components/SolicitudForm";
 import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import {
@@ -355,20 +356,16 @@ function Landing() {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section id="solicitar" className="mx-auto max-w-6xl px-5 py-20 lg:py-28">
-
-        <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-6 py-16 text-center sm:px-12">
+      {/* Solicitud */}
+      <section id="solicitar" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 lg:py-28">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-4 py-16 text-center sm:px-12">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold text-primary-foreground sm:text-4xl">
-            Tu negocio merece más tiempo para crecer.
+            Solicita tu capital de trabajo
           </h2>
           <p className="mx-auto mt-4 max-w-md text-primary-foreground/85">
-            Empieza hoy con orden y claridad. Nosotros nos encargamos del resto.
+            Cuéntanos sobre tu negocio. Te respondemos en menos de 24 horas.
           </p>
-          <Button variant="soft" size="xl" className="mt-8">
-            Crear mi cuenta
-            <ArrowRight />
-          </Button>
+          <SolicitudForm />
         </div>
       </section>
 
