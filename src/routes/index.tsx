@@ -329,7 +329,6 @@ function Landing() {
               </a>
             </Button>
           </div>
-        </div>
       </section>
 
       {/* Testimonios */}
